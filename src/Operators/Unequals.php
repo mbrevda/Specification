@@ -4,7 +4,7 @@ namespace Mbrevda\Specification\Operators;
 
 use \Mbrevda\Specification\SpecificationInterface;
 
-class Equals implements SpecificationInterface
+class Unequals implements SpecificationInterface
 {
     private $argument;
 
@@ -15,11 +15,11 @@ class Equals implements SpecificationInterface
 
     public function isSatisfiedBy($candidate)
     {
-        return $this->argument === $candidate;
+        return $this->argument !== $candidate;
     }
 
     public function selectSatisfying($ob, $candidate)
     {
-        return $ob->equals($this->argument, $candidate);
+        return $ob->unequal($this->argument1, $candidate);
     }
 }
