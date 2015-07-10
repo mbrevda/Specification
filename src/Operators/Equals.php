@@ -1,8 +1,8 @@
 <?php
 
-namespace Mbrevda\Specificaiton\Opperators;
+namespace Mbrevda\Specificaiton\Operators;
 
-use \Mbrevda\Specifcation\SpecificationInterface;
+use \Mbrevda\Specification\SpecificationInterface;
 
 class Equals implements SpecificationInterface
 {
@@ -15,11 +15,11 @@ class Equals implements SpecificationInterface
         $this->argument2 = $argument2;
     }
 
-    public function isSatisfiedBy()
+    public function isSatisfiedBy($candidate)
     {
         return $this->argument1 === $this->arguemnt2;
     }
-    
+
     public function selectSatisfying($ob)
     {
         return $ob->equals($this->argument1, $this->arguemnt2);

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mbrevda\Specificaiton\Opperators;
+namespace Mbrevda\Specificaiton\Operators;
 
-use \Mbrevda\Specifcation\SpecificationInterface;
+use \Mbrevda\Specification\SpecificationInterface;
 
 class Unequal implements SpecificationInterface
 {
@@ -19,7 +19,7 @@ class Unequal implements SpecificationInterface
     {
         return $this->argument1 !== $this->arguemnt2;
     }
-    
+
     public function selectSatisfying($ob)
     {
         return $ob->unequal($this->argument1, $this->arguemnt2);

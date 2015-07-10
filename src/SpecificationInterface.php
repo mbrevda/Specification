@@ -2,7 +2,7 @@
 
 namespace Mbrevda\Specification;
 
-interface Specification
+interface SpecificationInterface
 {
     public function isSatisfiedBy($candidate);
     public function selectSatisfying($candidate);

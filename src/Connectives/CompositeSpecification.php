@@ -18,12 +18,12 @@ abstract class CompositeSpecification implements SpecificationInterface
     {
         return $this->factory->andX($this, $specification);
     }
-    
+
     public function orX(SpecificationInterface $specification)
     {
         return $this->factory->orX($this, $specification);
     }
-    
+
     public function not(SpecificationInterface $specification)
     {
         return $this->factory->orX($this);
