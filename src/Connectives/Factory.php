@@ -1,11 +1,11 @@
 <?php
 
-namespace Mbrevda\Soecification\Conectives;
+namespace Mbrevda\Specification\Connectives;
 
 use \Mbrevda\Specification\SpecificationInterface;
-use \Mbrevda\Specification\Conectives\AndX;
-use \Mbrevda\Specification\Conectives\OrX;
-use \Mbrevda\Specification\Conectives\Not;
+use \Mbrevda\Specification\Connectives\AndX;
+use \Mbrevda\Specification\Connectives\OrX;
+use \Mbrevda\Specification\Connectives\Not;
 
 class Factory
 {
@@ -15,7 +15,7 @@ class Factory
     ) {
         return new AndX($specification1, $specification2);
     }
-    
+
     public function orX(
         SpecificationInterface $specification1,
         SpecificationInterface $specification2

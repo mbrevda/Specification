@@ -1,9 +1,9 @@
 <?php
 
-namespace Mbrevda\Specification\Conectives;
+namespace Mbrevda\Specification\Connectives;
 
 use \Mbrevda\Specification\SpecificationInterface;
-use \Mbrevda\Specification\Conectives\Factory;
+use \Mbrevda\Specification\Connectives\Factory;
 
 abstract class CompositeSpecification implements SpecificationInterface
 {

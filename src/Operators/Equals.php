@@ -23,6 +23,6 @@ class Equals implements SpecificationInterface
 
     public function selectSatisfying($ob)
     {
-        return $ob->equals($this->argument);
+        return $ob->equals($this->argument, $this->extractor->getName());
     }
 }

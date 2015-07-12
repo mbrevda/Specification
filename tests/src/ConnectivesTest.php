@@ -2,10 +2,10 @@
 
 namespace Mbrevda\Specification\Tests;
 
-use Mbrevda\Specification\Conectives\AndX;
-use Mbrevda\Specification\Conectives\OrX;
-use Mbrevda\Specification\Conectives\Not;
-use Mbrevda\Specification\Conectives\Factory;
+use Mbrevda\Specification\Connectives\AndX;
+use Mbrevda\Specification\Connectives\OrX;
+use Mbrevda\Specification\Connectives\Not;
+use Mbrevda\Specification\Connectives\Factory;
 use Mbrevda\Specification\Operators\Factory as OpFactory;
 
 class ConnectivesTest extends \PHPUnit_Framework_TestCase
@@ -30,13 +30,13 @@ class ConnectivesTest extends \PHPUnit_Framework_TestCase
         $two = $this->opFactory->unequals(3);
         $or = new OrX($one, $two);
 
-        $this->assertTrue($and->isSatisfiedBy(2));
+        $this->assertTrue($or->isSatisfiedBy(2));
     }
 
     public function testNot()
     {
         $not = new Not($this->opFactory->equals(2));
 
-        $this->assertTrue($and->isSatisfiedBy(3));
+        $this->assertTrue($not->isSatisfiedBy(3));
     }
 }

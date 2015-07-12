@@ -23,6 +23,6 @@ class Unequals implements SpecificationInterface
 
     public function selectSatisfying($ob)
     {
-        return $ob->unequals($this->argument);
+        return $ob->equals($this->argument, $this->extractor->getName());
     }
 }

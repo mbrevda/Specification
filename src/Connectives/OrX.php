@@ -1,8 +1,8 @@
 <?php
 
-namespace Mbrevda\Specification\Conectives;
+namespace Mbrevda\Specification\Connectives;
 
-use \Mbrevda\Specification\Conectives\CompositeSpecification;
+use \Mbrevda\Specification\Connectives\CompositeSpecification;
 use \Mbrevda\Specification\SpecificationInterface;
 
 class OrX extends CompositeSpecification
