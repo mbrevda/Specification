@@ -1,6 +1,6 @@
 <?php
 
-namespace Mbrevda\Soecification\Conectives;
+namespace Mbrevda\Specification\Conectives;
 
 use \Mbrevda\Specification\Conectives\CompositeSpecification;
 use \Mbrevda\Specification\SpecificationInterface;
@@ -17,5 +17,10 @@ class Not extends CompositeSpecification
     public function isSatisfiedBy($candidate)
     {
         return !$this->specification->isSatisfiedBy($candidate);
+    }
+
+    public function selectSatisfying($ob)
+    {
+        return null;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mbrevda\Soecification\Conectives;
+namespace Mbrevda\Specification\Conectives;
 
 use \Mbrevda\Specification\Conectives\CompositeSpecification;
 use \Mbrevda\Specification\SpecificationInterface;
@@ -22,5 +22,10 @@ class AndX extends CompositeSpecification
     {
         return $this->specification1->isSatisfiedBy($candidate)
             && $this->specification2->isSatisfiedBy($candidate);
+    }
+
+    public function selectSatisfying($ob)
+    {
+        return null;
     }
 }
