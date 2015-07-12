@@ -8,7 +8,7 @@ class Unequals implements SpecificationInterface
 {
     private $argument;
 
-    public function __construct($argument)
+    public function __construct($argument, PropertyExtractor $extractor = null)
     {
         $this->argument = $argument;
     }
@@ -18,8 +18,8 @@ class Unequals implements SpecificationInterface
         return $this->argument !== $candidate;
     }
 
-    public function selectSatisfying($ob, $candidate)
+    public function selectSatisfying($ob)
     {
-        return $ob->unequal($this->argument1, $candidate);
+        return $ob->unequal($this->argument1);
     }
 }

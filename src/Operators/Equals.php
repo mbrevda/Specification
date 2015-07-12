@@ -8,7 +8,7 @@ class Equals implements SpecificationInterface
 {
     private $argument;
 
-    public function __construct($argument)
+    public function __construct($argument, PropertyExtractor $extractor = null)
     {
         $this->argument = $argument;
     }
@@ -18,8 +18,8 @@ class Equals implements SpecificationInterface
         return $this->argument === $candidate;
     }
 
-    public function selectSatisfying($ob, $candidate)
+    public function selectSatisfying($ob)
     {
-        return $ob->equals($this->argument, $candidate);
+        return $ob->equals($this->argument);
     }
 }
