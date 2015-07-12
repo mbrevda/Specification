@@ -4,34 +4,42 @@ namespace Mbrevda\Specification\Tests;
 
 use \Mbrevda\Specification\Operators\Equals;
 use \Mbrevda\Specification\Operators\Unequals;
+use \Mbrevda\Specification\Extractors\Null;
+
+include_once(__DIR__ . '/../Ob.php');
 
 class OpperatorsTest extends \PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        $this->nullExtractor = new Null;
+    }
+
     public function testEqualsTrue()
     {
-        $equals = new Equals(2);
+        $equals = new Equals(2, $this->nullExtractor);
 
         $this->assertTrue($equals->isSatisfiedBy(2));
     }
-    
+
     public function testEqualsFalse()
     {
-        $equals = new Equals(3);
+        $equals = new Equals(3, $this->nullExtractor);
 
         $this->assertFalse($equals->isSatisfiedBy(2));
     }
-    
+
     public function testUnequalsTrue()
     {
-        $equals = new Unequals(4);
+        $unequals = new Unequals(4, $this->nullExtractor);
 
-        $this->assertTrue($equals->isSatisfiedBy(5));
+        $this->assertTrue($unequals->isSatisfiedBy(5));
     }
-    
+
     public function testUnequalsFalse()
     {
-        $equals = new Unequals(2);
+        $unequals = new Unequals(2, $this->nullExtractor);
 
-        $this->assertFalse($equals->isSatisfiedBy(2));
+        $this->assertFalse($unequals->isSatisfiedBy(2));
     }
 }
