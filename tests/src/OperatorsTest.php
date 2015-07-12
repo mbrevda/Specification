@@ -6,8 +6,6 @@ use \Mbrevda\Specification\Operators\Equals;
 use \Mbrevda\Specification\Operators\Unequals;
 use \Mbrevda\Specification\Extractors\Null;
 
-include_once(__DIR__ . '/../Ob.php');
-
 class OpperatorsTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
