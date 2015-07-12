@@ -28,14 +28,14 @@ class ConnectivesTest extends \PHPUnit_Framework_TestCase
     {
         $one = $this->opFactory->equals(2);
         $two = $this->opFactory->unequals(3);
-        $and = new OrX($one, $two);
+        $or = new OrX($one, $two);
 
         $this->assertTrue($and->isSatisfiedBy(2));
     }
 
     public function testNot()
     {
-        $and = new Not($this->opFactory->equals(2));
+        $not = new Not($this->opFactory->equals(2));
 
         $this->assertTrue($and->isSatisfiedBy(3));
     }
