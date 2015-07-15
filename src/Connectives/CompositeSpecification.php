@@ -3,29 +3,29 @@
 namespace Mbrevda\Specification\Connectives;
 
 use \Mbrevda\Specification\SpecificationInterface;
-use \Mbrevda\Specification\Connectives\Factory;
+use \Mbrevda\Specification\Connectives\AndX;
+use \Mbrevda\Specification\Connectives\OrX;
+use \Mbrevda\Specification\Connectives\Not;
 
 abstract class CompositeSpecification implements SpecificationInterface
 {
-    protected $factory;
 
-    public function __construct(Factory $factory)
-    {
-        $this->factory = $factory;
+    public function andX(
+        SpecificationInterface $specification1,
+        SpecificationInterface $specification2
+    ) {
+        return new AndX($specification1, $specification2);
     }
 
-    public function andX(SpecificationInterface $specification)
-    {
-        return $this->factory->andX($this, $specification);
-    }
-
-    public function orX(SpecificationInterface $specification)
-    {
-        return $this->factory->orX($this, $specification);
+    public function orX(
+        SpecificationInterface $specification1,
+        SpecificationInterface $specification2
+    ) {
+        return new orX($specification1, $specification2);
     }
 
     public function not(SpecificationInterface $specification)
     {
-        return $this->factory->orX($this);
+        return new Not($specification);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Mbrevda\Specification\Operators;
 
-use \Mbrevda\Specification\SpecificationInterface;
 use \Mbrevda\Specification\Extractors\ExtractorInterface;
+use \Mbrevda\Specification\Connectives\CompositeSpecification;
 
-class Equals implements SpecificationInterface
+class Equals extends CompositeSpecification
 {
     private $argument;
     private $extractor;

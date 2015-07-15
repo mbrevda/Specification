@@ -21,6 +21,6 @@ class Not extends CompositeSpecification
 
     public function selectSatisfying($ob)
     {
-        return null;
+        return $ob->not($this->specification);
     }
 }

@@ -26,6 +26,6 @@ class AndX extends CompositeSpecification
 
     public function selectSatisfying($ob)
     {
-        return $ob->andX($this->specification1,  $this->specification2);
+        return $ob->andX($this->specification1, $this->specification2);
     }
 }

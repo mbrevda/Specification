@@ -26,6 +26,6 @@ class OrX extends CompositeSpecification
 
     public function selectSatisfying($ob)
     {
-        return null;
+        return $ob->orX($this->specification1, $this->specification2);
     }
 }

@@ -4,8 +4,9 @@ namespace Mbrevda\Specification\Operators;
 
 use \Mbrevda\Specification\SpecificationInterface;
 use \Mbrevda\Specification\Extractors\ExtractorInterface;
+use \Mbrevda\Specification\Connectives\CompositeSpecification;
 
-class Unequals implements SpecificationInterface
+class Unequals extends CompositeSpecification
 {
     private $argument;
     private $extractor;

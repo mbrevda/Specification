@@ -39,4 +39,15 @@ class ConnectivesTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($not->isSatisfiedBy(3));
     }
+
+    public function testChaining()
+    {
+        $equalsTwo = $this->opFactory->equals(2);
+        $equalsThree = $this->opFactory->equals(2);
+        $test = $equalsTwo
+            ->orX($equalsTwo, $equalsThree)
+            ->andX($equalsTwo, $equalsTwo);
+
+        $this->assertTrue($test->isSatisfiedBy(2));
+    }
 }
