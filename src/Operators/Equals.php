@@ -23,6 +23,6 @@ class Equals extends CompositeSpecification
 
     public function selectSatisfying($ob)
     {
-        return $ob->equals($this->argument, $this->extractor->getName());
+        return $ob->equals($this->extractor->getName(), $this->argument);
     }
 }

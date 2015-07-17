@@ -12,7 +12,7 @@ class OrX extends CompositeSpecification
 
     public function __construct(
         SpecificationInterface $specification1,
-        SpecificationInterface $specification2
+        SpecificationInterface $specification2 = null
     ) {
         $this->specification1 = $specification1;
         $this->specification2 = $specification2;
