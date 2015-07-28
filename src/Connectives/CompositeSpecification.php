@@ -14,14 +14,16 @@ abstract class CompositeSpecification implements SpecificationInterface
         SpecificationInterface $specification1,
         SpecificationInterface $specification2 = null
     ) {
-        return new AndX($specification1, $specification2);
+        return new AndX($this, $specification1);
     }
 
     public function orX(
         SpecificationInterface $specification1,
         SpecificationInterface $specification2 = null
     ) {
-        return new orX($specification1, $specification2);
+        return $specification2
+            ? new OrX($specification1, $specification2)
+            : new OrX($this, $specification1);
     }
 
     public function not(SpecificationInterface $specification)
