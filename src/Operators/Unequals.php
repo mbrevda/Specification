@@ -24,6 +24,8 @@ class Unequals extends CompositeSpecification
 
     public function selectSatisfying($ob)
     {
-        return $ob->equals($this->extractor->getName(), $this->argument);;
+        $eq = $ob->unequals($this->extractor->getName(), $this->argument);
+
+        return parent::selectSatisfying($eq);
     }
 }
